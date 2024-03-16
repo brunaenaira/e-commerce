@@ -1,19 +1,20 @@
-import { useState } from "react";
-import './styles.css'
+import './styles.css';
+import { Link, useLocation } from "react-router-dom";
 
 export default function Menu() {
-    const [activeLink, setActiveLink] = useState('Home');
+    const { pathname } = useLocation();
     return (
         <div>
-            <a className={activeLink === 'Home'?'active':''} 
-            onClick={() => {
-                setActiveLink('Home');
-            }}>Home
-            </a>
-            <a className={activeLink === 'Usuários'?'active':''} 
-            onClick={() => {
-                setActiveLink('Users');
-                }}>Usuários</a>
+            <Link
+                to="/"
+                className={pathname === '/' ? 'active' : ''}>
+                Home
+            </Link>
+            <Link
+                to="/users"
+                className={pathname === '/users' ? 'active' : ''}>
+                Usuários
+            </Link>
         </div>
-    );   
+    );
 }
