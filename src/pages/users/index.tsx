@@ -4,7 +4,7 @@ export default function Users (){
     return (
         <>
         <Users/>
-          <h1>Hello World!</h1>
+          <h1>Hello React World Guys!</h1>
         </> 
       );
     }
