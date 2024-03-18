@@ -1,13 +1,10 @@
-import Menu from "../../components/layout/menu"
+import Menu from "../../components/layout/menu";
 
 export default function Home() {
-
   return (
     <>
-    <Menu/>
-      <h1>Hello World!</h1>
-    </> 
+      <Menu />
+      <h1>Home</h1>
+    </>
   );
 }
-
-
