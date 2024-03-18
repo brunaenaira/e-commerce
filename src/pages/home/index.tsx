@@ -1,10 +1,18 @@
-import Menu from "../../components/layout/menu";
+import Layout from '../../components/layout';
+import { Title } from '../../components/layout/commons';
+import { useAuth } from '../../hooks/auth';
+import ProductsWidget from '../products/products';
+import UsersWidget from './users';
 
 export default function Home() {
-  return (
-    <>
-      <Menu />
-      <h1>Home</h1>
-    </>
-  );
+    const { user } = useAuth();
+
+    return (
+        <Layout>
+            <Title>Olá, {user!.name}</Title>
+
+            <ProductsWidget />
+            <UsersWidget />
+        </Layout>
+    );
 }
